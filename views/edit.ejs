@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Task</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 min-h-screen text-white font-sans">
+
+  <header class="w-full sticky top-0 z-50 bg-zinc-900/70 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="text-blue-400 hover:underline">← Back to Home</a>
+      <h1 class="text-xl font-semibold tracking-tight">Edit Task</h1>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-10">
+    <div class="bg-zinc-800/40 backdrop-blur-lg p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4"><%= fileName %></h2>
+      <% let a = fileData; %>
+      <form action="/save/<%= fileName %>" method="post" class="space-y-4">
+        <textarea name="content" rows="10" class="w-full bg-zinc-700/60 backdrop-blur-sm text-white p-4 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600 resize-none text-lg leading-relaxed"><%= a %></textarea>
+        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-md transition-all">Save</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
